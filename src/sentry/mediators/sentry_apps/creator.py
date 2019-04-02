@@ -10,6 +10,7 @@ from sentry.models import (ApiApplication, SentryApp, SentryAppComponent, User,)
 
 class Creator(Mediator):
     name = Param(six.string_types)
+    author = Param(six.string_types)
     organization = Param('sentry.models.Organization')
     scopes = Param(Iterable)
     events = Param(Iterable, default=lambda self: [])
@@ -42,6 +43,7 @@ class Creator(Mediator):
 
         return SentryApp.objects.create(
             name=self.name,
+            author=self.author,
             application_id=self.api_app.id,
             owner_id=self.organization.id,
             proxy_user_id=self.proxy.id,
