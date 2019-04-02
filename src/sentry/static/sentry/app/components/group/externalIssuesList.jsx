@@ -83,7 +83,9 @@ class ExternalIssueList extends AsyncComponent {
 
       api
         .requestPromise(
-          `/organizations/${orgId}/sentry-app-components/?filter=issue-link&projectId=${project.id}`
+          `/organizations/${orgId}/sentry-app-components/?filter=issue-link&projectId=${
+            project.id
+          }`
         )
         .then(data => {
           this.setState({components: data});
