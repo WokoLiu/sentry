@@ -153,6 +153,7 @@ export default class OrganizationMemberRow extends React.PureComponent {
                       priority="primary"
                       size="xsmall"
                       onClick={this.handleSendInvite}
+                      data-test-id="resend-invite"
                     >
                       {t('Resend invite')}
                     </ResendInviteButton>
